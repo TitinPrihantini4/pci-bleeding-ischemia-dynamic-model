@@ -7,7 +7,13 @@ from scipy.integrate import solve_ivp
 from scipy.stats import qmc, rankdata, pearsonr
 from scipy.optimize import least_squares
 
-OUT=Path('/mnt/data/apcvp2026_pci_deescalation'); FIG=OUT/'figures'; FIG.mkdir(parents=True,exist_ok=True)
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "results"
+FIG = ROOT / "figures"
+
+OUT.mkdir(parents=True, exist_ok=True)
+FIG.mkdir(parents=True, exist_ok=True)
+
 SEED=20260829
 rng=np.random.default_rng(SEED)
 
