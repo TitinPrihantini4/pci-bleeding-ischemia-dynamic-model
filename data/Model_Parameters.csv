@@ -1,0 +1,13 @@
+Parameter,Unit,Meaning,Reference_value_or_anchor,Evidence_status
+Hb,g/dL,Observed clinical variable,ARC-HBR Hb <11 g/dL major HBR criterion,Literature-derived clinical anchor
+eGFR,mL/min/1.73m2,Observed clinical variable,ARC-HBR <30 major; 30–59 minor HBR,Literature-derived clinical anchor
+P,0/1,Prior spontaneous bleeding history,ARC-HBR/PRECISE-DAPT,Literature-derived variable definition
+t0,days,Earliest de-escalation landmark,30 days,ESC 2023 boundary
+b0,annualized hazard scale,Baseline bleeding hazard scale,0.026,Provisional structural coefficient calibrated only to keep simulations within published trial-scale ranges
+i0,annualized hazard scale,Baseline ischemic hazard scale,0.090,Provisional structural coefficient
+etaB,dimensionless,Potent-therapy bleeding amplification,0.70,Provisional structural coefficient
+etaI,dimensionless,Potent-therapy ischemic protection,1.15,Provisional structural coefficient
+deltaI,per month,Post-landmark ischemic hazard decay,0.180,Provisional structural coefficient
+lambdaB,utility weight,Bleeding loss weight,1.00,Illustrative decision weight
+lambdaI,utility weight,Ischemic loss weight,1.70,Illustrative decision weight
+cs,utility,Switching penalty,0.003,Illustrative decision cost
