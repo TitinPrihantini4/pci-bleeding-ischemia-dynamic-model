@@ -1,0 +1,170 @@
+{
+  "seed": 20260829,
+  "reference_profile": {
+    "hemoglobin": 11.5,
+    "eGFR": 45,
+    "prior_bleeding": 0,
+    "optimal_switch": [
+      3.0,
+      0.1299425734007241,
+      0.08519460465115403,
+      0.02455762867621769
+    ]
+  },
+  "scenarios": [
+    {
+      "profile": "Low vulnerability",
+      "Hb_g_dL": 13.8,
+      "eGFR": 85,
+      "prior_bleeding": 0,
+      "optimal_switch_month_after_30d": 4.6000000000000005,
+      "optimal_calendar_day_post_index": 170.02400000000003,
+      "loss": 0.07219944047443788,
+      "bleed_prob_potent": 0.05197943378927672,
+      "ischemic_prob_potent": 0.01202408807353339,
+      "bleed_prob_deesc": 0.03820645413352364,
+      "ischemic_prob_deesc": 0.02009202993341075,
+      "bleeding_absolute_change": -0.013772979655753081,
+      "ischemic_absolute_change": 0.008067941859877359
+    },
+    {
+      "profile": "Renal vulnerability",
+      "Hb_g_dL": 13.0,
+      "eGFR": 35,
+      "prior_bleeding": 0,
+      "optimal_switch_month_after_30d": 4.2,
+      "optimal_calendar_day_post_index": 157.848,
+      "loss": 0.11665326777249511,
+      "bleed_prob_potent": 0.08747424350385158,
+      "ischemic_prob_potent": 0.018822260582425754,
+      "bleed_prob_deesc": 0.06462159481202079,
+      "ischemic_prob_deesc": 0.03137864683909186,
+      "bleeding_absolute_change": -0.02285264869183079,
+      "ischemic_absolute_change": 0.012556386256666108
+    },
+    {
+      "profile": "Anemia",
+      "Hb_g_dL": 10.8,
+      "eGFR": 75,
+      "prior_bleeding": 0,
+      "optimal_switch_month_after_30d": 2.4000000000000004,
+      "optimal_calendar_day_post_index": 103.05600000000001,
+      "loss": 0.10963236807989901,
+      "bleed_prob_potent": 0.09136115202491812,
+      "ischemic_prob_potent": 0.014243392613198513,
+      "bleed_prob_deesc": 0.06753093210728223,
+      "ischemic_prob_deesc": 0.0237824210188311,
+      "bleeding_absolute_change": -0.023830219917635898,
+      "ischemic_absolute_change": 0.009539028405632588
+    },
+    {
+      "profile": "Prior bleeding",
+      "Hb_g_dL": 13.0,
+      "eGFR": 75,
+      "prior_bleeding": 1,
+      "optimal_switch_month_after_30d": 0.6000000000000001,
+      "optimal_calendar_day_post_index": 48.264,
+      "loss": 0.13591693989974135,
+      "bleed_prob_potent": 0.12517999368764088,
+      "ischemic_prob_potent": 0.014106081039378715,
+      "bleed_prob_deesc": 0.09298823977174064,
+      "ischemic_prob_deesc": 0.023554254472722413,
+      "bleeding_absolute_change": -0.032191753915900234,
+      "ischemic_absolute_change": 0.009448173433343698
+    },
+    {
+      "profile": "Combined HBR",
+      "Hb_g_dL": 10.5,
+      "eGFR": 25,
+      "prior_bleeding": 1,
+      "optimal_switch_month_after_30d": 0.0,
+      "optimal_calendar_day_post_index": 30.0,
+      "loss": 0.3123645214166699,
+      "bleed_prob_potent": 0.31098895377188807,
+      "ischemic_prob_potent": 0.025226535064639788,
+      "bleed_prob_deesc": 0.23802754973164553,
+      "ischemic_prob_deesc": 0.041962924520602574,
+      "bleeding_absolute_change": -0.07296140404024254,
+      "ischemic_absolute_change": 0.016736389455962786
+    }
+  ],
+  "stochastic": {
+    "median_switch_month": 2.8000000000000003,
+    "p2_5": 0.0,
+    "p97_5": 4.0,
+    "immediate_fraction": 0.14666666666666667,
+    "late_no_switch_fraction": 0.0
+  },
+  "top_prcc": [
+    {
+      "parameter": "treatment_bleed",
+      "PRCC_optimal_switch_month": -0.8955608067211623,
+      "p_value": 7.203624246158527e-114
+    },
+    {
+      "parameter": "i0",
+      "PRCC_optimal_switch_month": 0.8418983129051056,
+      "p_value": 3.4096684890059443e-87
+    },
+    {
+      "parameter": "b0",
+      "PRCC_optimal_switch_month": -0.778146436096523,
+      "p_value": 3.3716259012878846e-66
+    },
+    {
+      "parameter": "lambda_bleed",
+      "PRCC_optimal_switch_month": -0.7304895603714261,
+      "p_value": 1.3061119952849e-54
+    },
+    {
+      "parameter": "lambda_isch",
+      "PRCC_optimal_switch_month": 0.6948186100404157,
+      "p_value": 1.9159914099949313e-47
+    },
+    {
+      "parameter": "w_g_I",
+      "PRCC_optimal_switch_month": 0.5618717909507649,
+      "p_value": 5.035736245985874e-28
+    },
+    {
+      "parameter": "w_g_B",
+      "PRCC_optimal_switch_month": -0.515700334903589,
+      "p_value": 3.8458611428272846e-23
+    },
+    {
+      "parameter": "ischemic_decay",
+      "PRCC_optimal_switch_month": -0.4994217986823009,
+      "p_value": 1.3672551089716721e-21
+    }
+  ],
+  "aic": [
+    {
+      "model": "Shared exponential ischemic-decay model",
+      "AIC_synthetic": -284.34162159999795,
+      "RSS": 0.0001337532683374808,
+      "fitted_parameters": 3,
+      "delta_AIC": 0.0
+    },
+    {
+      "model": "Full competing-hazard structural model",
+      "AIC_synthetic": -282.34162159991416,
+      "RSS": 0.0001337532683379478,
+      "fitted_parameters": 4,
+      "delta_AIC": 2.000000000083787
+    },
+    {
+      "model": "Independent linear hazard model",
+      "AIC_synthetic": -272.86955166125216,
+      "RSS": 0.00019847564600056488,
+      "fitted_parameters": 4,
+      "delta_AIC": 11.47206993874579
+    },
+    {
+      "model": "Constant competing-hazard model",
+      "AIC_synthetic": -222.58973785602376,
+      "RSS": 0.0019051676919898685,
+      "fitted_parameters": 2,
+      "delta_AIC": 61.75188374397419
+    }
+  ]
+}
