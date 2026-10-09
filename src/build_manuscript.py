@@ -9,7 +9,12 @@ from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
-BASE=Path('/mnt/data/apcvp2026_pci_deescalation'); FIG=BASE/'figures'
+ROOT = Path(__file__).resolve().parent.parent
+BASE = ROOT / "results"
+FIG = ROOT / "figures"
+DOCS = ROOT / "docs"
+
+DOCS.mkdir(parents=True, exist_ok=True)
 summary=json.loads((BASE/'Analysis_Summary.json').read_text())
 sc=pd.read_csv(BASE/'Scenario_Results.csv'); pr=pd.read_csv(BASE/'Global_Sensitivity_PRCC.csv'); mc=pd.read_csv(BASE/'Synthetic_Model_Comparison_AIC.csv'); rob=pd.read_csv(BASE/'Numerical_Robustness.csv'); st=pd.read_csv(BASE/'Stochastic_Perturbation_Results.csv'); surf=pd.read_csv(BASE/'Bleeding_Ischemia_Risk_Surface.csv')
 
