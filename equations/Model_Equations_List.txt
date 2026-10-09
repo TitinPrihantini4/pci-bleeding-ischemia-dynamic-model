@@ -1,0 +1,53 @@
+Hemoglobin vulnerability
+q_Hb = [1 + exp{(Hb - 11.5)/0.85}]^(-1)
+
+Renal vulnerability
+q_G = [1 + exp{(eGFR - 50)/14}]^(-1)
+
+Prior-bleeding state
+P ∈ {0,1}
+
+Treatment intensity
+u(t) = 1 for potent DAPT; u(t) = 0.55 for the illustrative de-escalated state
+
+Bleeding hazard
+h_B(t) = b_0 exp{β_H q_Hb + β_G q_G + β_P P + η_B u(t)}
+
+Ischemic hazard
+h_I(t) = i_0 exp{γ_H q_Hb + γ_G q_G + γ_P P - η_I u(t) - δ_I t}
+
+Latent bleeding burden
+dB/dt = k_B h_B(t)[1-B(t)] - r_B B(t)
+
+Latent ischemic burden
+dI/dt = k_I h_I(t)[1-I(t)] - r_I I(t)
+
+Net competing-risk margin
+Ψ(t) = λ_B[B(t)+h_B(t)] - λ_I[I(t)+h_I(t)]
+
+Latent regime
+Z(t) ∈ {Ischemic-dominant, Balanced, Bleeding-dominant, De-escalation-favorable}
+
+Transition probability
+Pr[Z(t+Δt)=j | Z(t)=i,x(t)] = [exp{Q(x(t))Δt}]_ij
+
+Cumulative bleeding probability
+P_B(T) = 1 - exp{-∫_0^T h_B(s) ds}
+
+Cumulative ischemic probability
+P_I(T) = 1 - exp{-∫_0^T h_I(s) ds}
+
+Expected clinical loss
+L(τ) = λ_B P_B(T|τ) + λ_I P_I(T|τ) + c_s 1(τ<T)
+
+Optimal stopping time
+τ* = arg min_{τ∈[0,T]} L(τ)
+
+Stochastic perturbation
+dX_t = f(X_t,θ)dt + Σ dW_t
+
+Synthetic AIC benchmark
+AIC = n log(RSS/n) + 2k
+
+Global sensitivity
+PRCC(θ_j,τ*) = Corr[rank-residual(θ_j), rank-residual(τ*)]
