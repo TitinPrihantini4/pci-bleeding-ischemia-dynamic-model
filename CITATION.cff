@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this computational framework, please cite it using the metadata below."
+
+title: "Dynamical Modelling of Bleeding–Ischemia Risk Surfaces for Antithrombotic De-escalation after PCI Based on Hemoglobin, Renal Function, and Prior Bleeding"
+
+type: software
+
+authors:
+  - family-names: "Prihantini"
+    given-names: "Prihantini"
+
+version: 1.0.0
+
+date-released: 2026-10-10
+
+repository-code: "https://github.com/TitinPrihantini4/pci-bleeding-ischemia-dynamic-model"
+
+keywords:
+  - percutaneous coronary intervention
+  - antithrombotic de-escalation
+  - competing risk
+  - dynamical modelling
+  - optimal stopping
+  - uncertainty quantification
+
+license: MIT
